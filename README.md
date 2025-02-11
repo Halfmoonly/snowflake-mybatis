@@ -33,6 +33,7 @@ private final long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);//31
                 byte[] mac = network.getHardwareAddress();
                 if (null != mac) {
                     id = ((0x000000FF & (long) mac[mac.length - 2]) | (0x0000FF00 & (((long) mac[mac.length - 1]) << 8))) >> 6;
+                    // id % (32) 
                     id = id % (maxDatacenterId + 1);
                 }
             }
