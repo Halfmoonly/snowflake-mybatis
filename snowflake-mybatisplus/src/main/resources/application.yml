@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    # 数据库
+    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema&useSSL=false&autoReconnect=true
+    username: ly_dev
+    password: ly_dev
+    driver-class-name: org.postgresql.Driver
+    # 连接池-初始化大小
+    initial-size: 10
+    # 连接池-最大连接数
+    max-active: 100
+    # 最大等待时间
+    max-wait: 60000
+    # 连接池-最小空闲数
+    min-idle: 10
+    # 检测空闲连接
+    test-while-idle: true
+    # 最小空闲时间
+    min-evictable-idle-time-millis: 300000
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml # 如果有Mapper XML文件的话
+  global-config:
+    db-config:
+      logic-delete-field: data_status # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+
+server:
+  port: 8080
