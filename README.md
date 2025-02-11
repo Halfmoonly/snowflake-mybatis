@@ -12,6 +12,9 @@ k8s里起了多个pod，多个pod有可能部署在不同的机房节点中，�
 
 ```java
 private final long datacenterIdBits = 5L;
+//-1在二进制中表示为所有位都设置为1（例如，在8位系统中为11111111），
+//-1左移5位代表低5位为0
+//再与-1异或XOR，最终结果是低5位为1，即31
 private final long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);//31
 
     /**
