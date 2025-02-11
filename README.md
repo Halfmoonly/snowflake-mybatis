@@ -1,4 +1,4 @@
-mybatis-plus 雪花算法id冲突问题解决
+通过Redis初始化index并自定义datacenterId和workerId,解决 mybatis-plus 雪花算法id冲突问题解决
 
 ## 问题描述
 
